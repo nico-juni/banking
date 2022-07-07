@@ -1,4 +1,4 @@
-module github.com/jbub/banking
+module github.com/nico-juni/banking
 
 go 1.17
 
