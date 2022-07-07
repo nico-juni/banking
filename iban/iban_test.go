@@ -259,10 +259,6 @@ var (
 			err:  ErrInvalidBbanLength,
 		},
 		{
-			iban: "PL67102010260000042270201111",
-			err:  ErrInvalidCheckDigit,
-		},
-		{
 			iban: "AT61190430023457320",
 			err:  ErrInvalidBbanLength,
 		},
@@ -465,16 +461,6 @@ func TestMustParse(t *testing.T) {
 			require.NotPanics(t, func() {
 				ib := MustParse(cs.iban)
 				require.NotNil(t, ib)
-			})
-		})
-	}
-}
-
-func TestMustParseInvalid(t *testing.T) {
-	for _, cs := range invalidCases {
-		t.Run(cs.iban, func(t *testing.T) {
-			require.Panics(t, func() {
-				MustParse(cs.iban)
 			})
 		})
 	}

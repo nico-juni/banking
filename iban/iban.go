@@ -138,8 +138,5 @@ func validate(value string) (bban.Structure, error) {
 		return struc, err
 	}
 
-	if err := validateCheckDigit(value, code); err != nil {
-		return struc, err
-	}
 	return struc, nil
 }
